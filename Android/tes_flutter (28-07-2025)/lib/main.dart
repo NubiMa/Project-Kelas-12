@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             // TEKS
             const Text(
-              'Hi, I still learn bout Flutter',
+              'Hi, I still learn bout flutter',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -49,8 +49,13 @@ class MyHomePage extends StatelessWidget {
             // ELEVATED BUTTON
             ElevatedButton(
               onPressed: () {
-                // Bisa kasih aksi klik di sini nanti
+                print("Button clicked");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HaloPage()),
+                );
               },
+
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.purple[50],
                 foregroundColor: const Color.fromARGB(255, 128, 73, 162),
@@ -81,6 +86,25 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class HaloPage extends StatelessWidget {
+  const HaloPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Kembali"),
+      ),
+      body: Center(
+        child: Text(
+          "M Fadhil Maulana S / 09 / XII RPL2",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
     );
